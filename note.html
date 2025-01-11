@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="./note.css">
+    <link rel="icon" type="image/x-icon" href="./notesFavIcon.png">
+    <script>
+        
+       //LOGOUT (ctrl+x)
+
+document.addEventListener('keydown', function(event) {
+    
+    if ((event.ctrlKey) && event.key === 'x') {
+        event.preventDefault(); 
+        document.querySelector('#logoutbtn').click();
+    }
+});
+
+//PAGE LOGIN (ctrl+l)
+
+document.addEventListener('keydown', function(event) {
+    
+    if ((event.ctrlKey) && event.key === 'l') {
+        event.preventDefault(); 
+        document.querySelector('#pagelogin').click();
+    }
+});
+
+//TOGGLE MODE BUTTON (ctrl+m)
+
+document.addEventListener('keydown', function(event) {
+    
+    if ((event.ctrlKey) && event.key === 'm') {
+        event.preventDefault(); 
+        document.querySelector('#toggleModeButton').click();
+    }
+});
+
+//NOTE SAVE (ctrl+f)
+
+document.addEventListener('keydown', function(event) {
+    
+    if ((event.ctrlKey) && event.key === 'f') {
+        event.preventDefault(); 
+        document.querySelector('#saveNoteButton').click();
+    }
+});
+    </script>
+
+</head>
+<body>
+    <div class="login-form firstpagelogin" id="loginForm">
+        <h2>Login
+            <br><h3>Via Mail or Username</h3>
+        </h2>
+        <form id="loginFormElement">
+            <input type="text" id="username" placeholder="Enter your name or Email" required style="border-radius: 4px;" aria-label="Email">
+            <input type="submit" value="Login" class="loginButton" aria-label="Submit" id="pagelogin">
+        </form>
+    </div>
+
+    <div class="greeting" id="welcomeMessage">
+        <h2>Welcome, <span id="showname"></span>!</h2>
+        <button id="logoutbtn" style="background-color: rgb(4,4,61);color: white; border-radius: 5px;cursor: pointer;" aria-label="LOGOUT BUTTON">Logout</button>
+        <button id="toggleModeButton" style="background-color: rgb(4,4,61);color: white; border-radius: 5px;cursor: pointer;" aria-label="SWITCH MODE">Dark/Light Mode</button>
+
+    </div>
+
+    <div class="note-container" id="noteholder" style="display: none;">
+        <h2 style="font-weight: 900; font-family:'Times New Roman', Times, serif;">Create/Edit Note(s)</h2>
+        <form id="noteentry">
+            <input type="text" id="noteHeading" placeholder="Title of the Note" required aria-label="NOTE HEADNG">
+            <textarea name="editor" id="notedata" placeholder="Start Capturing your thought here..." required aria-label="NOTE CONTENT"></textarea>
+            
+            <!-- DROPDOWN MENU FOR CATEGORY SELECTION -->
+
+            <label for="categoryselected">Select Category:</label>
+            <select id="categoryselected" aria-label="NOTES CATEGORY">
+                <option value="" selected disabled>Select a category</option>
+                <option value="violet" aria-label="WORK">Work</option>
+                <option value="darkblue" aria-label="PERSONAL">Personal</option>
+                <option value="blue" aria-label="IMPORTANT">Important</option>
+                <option value="purple" aria-label="MISCELLANEOUS">Miscellaneous</option>
+            </select>
+            
+            <input type="submit" id="saveNoteButton" value="Save Note" aria-label="submit">
+        </form>
+        <h3 style="font-family: 'Times New Roman', Times, serif;">Your Notes</h3>
+        <input type="text" id="searchquery" placeholder="Search notes..."  aria-label="SEARCH NOTES">
+
+        <!-- DROPDOWN MENU FOR SORTING OPTIONS -->
+
+        <select id="sortOptions" aria-label="SORTING OPTIONS">
+          <option value="" selected disabled>Sort By</option>
+          <option value="title" aria-label="SORT BY TITLE">Sort by Title</option>
+          <option value="date" aria-label="SORT BY DATE">Sort by Date</option>
+        </select>
+
+        <ul id="notelist"></ul>
+    </div>
+
+   <div id="thought" class="login-form thought">
+    <h2>Every thought is a seed , nurture it with notes and watch your ideas grow .</h2>
+   </div>
+
+   <div class="login-form webname" id="web-app-name">
+    <h1>BloggingVoyage Notes</h1>
+   </div>
+
+   <!-- Glow Effect For Cursor -->
+
+   <section class="glow" id="glow">
+    <div class="gloweffect" id="gloweffect"></div>
+  </section>
+
+    <script src="./note.js"></script>
+</body>

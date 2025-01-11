@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloggingVoyage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./FavIcon.png">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo" style="font-weight: bold">BloggingVoyage</div>
+        <ul class="nav-links">
+          <li><a href="#blogCreationButton">Blogs</a></li>
+          <li><a href="./note.html" target="_blank">Take a Note</a></li>
+          <li><a href="https://shivang-portfolio-lovat.vercel.app/">About</a></li>
+          <li><a href="mailto:sharmashivang037@gmail.com">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <ul class="mobile-links">
+          <li><a href="#blogCreationButton">Blogs</a></li>
+          <li><a href="./note.html" target="_blank">Take a Note</a></li>
+          <li><a href="https://shivang-portfolio-lovat.vercel.app/">About</a></li>
+          <li><a href="mailto:sharmashivang037@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main style="position: absolute; top: 3.1rem ; background-color: rgb(0, 0, 0);">
+      <section class="first" id="first">
+        <div id="container" class="container">
+          <div id="boldHeading" class="boldHeading"><p>Daily Muse</p></div>
+          <div class="oneContainer" id="oneContainer">
+            <div class="div1" id="div1">
+              <div class="smalldiv1" id="smalldiv1">
+                <h4>Blogging is sharing your voice with the world.</h4>
+              </div>
+            </div>
+            <div class="div2" id="div2"><h3>"Inspire, Create, Share"</h3></div>
+            <div class="div3" id="div3"><h3>"Manage, Connect, Grow"</h3></div>
+            <div class="div4" id="div4">
+              <h3>"Organize, Craft, Publish"</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -------------------------------------------------------------------------------- -->
+      <!-- Dynamically Displaying The Blogs -->
+      <section class="blog_cards" id="blog_cards">
+        <div class="cardContainer" id="cardContainer">
+
+        </div>
+
+        <div class="form-container" id="form-container">
+          <h2>Article Information</h2>
+          <form id="article-form">
+            <label for="blog-id">Id:</label>
+            <input type="number" id="blog-id" name ="id" value="" required>
+      
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="" placeholder="Enter The Title of the blog" required>
+      
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="summary" value="" placeholder="Enter The Summary Here" required></textarea>
+      
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" name="topic" value="" placeholder="Enter The Topic" required>
+      
+            <label for="detailedDescription">Detailed Description:</label>
+            <textarea id="detailedDescription" name="detailedDescription" value="" placeholder="Enter The Description of The Blog Here" required></textarea>
+      
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="" placeholder="Author's Name" required>
+      
+            <label for="publicationDate">Publication Date:</label>
+            <input type="date" id="publicationDate" name="publicationDate" value="" required>
+      
+            <label for="imageURL">Image URL:</label>
+            <input type="text" id="imageURL" name="imageURL" value="" placeholder="The Address Should be in the form of 'ImageIDNUMBER.jpg' ">
+      
+            <label for="tags">Tags (comma separated):</label>
+            <input type="text" id="tags" name="tags" value="" placeholder="Enter The Tags Here" required>
+      
+            <label for="commentsCount">Comments Count:</label>
+            <input type="number" id="commentsCount" name="commentsCount" value="" required>
+      
+            <label for="isFeatured">Featured:</label>
+            <select id="isFeatured" name="isFeatured" required>
+              <option value="" disabled selected>Choose Here</option>
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+      
+            <label for="readTime">Read Time:</label>
+            <input type="text" id="readTime" name="readTime" value="" required>
+      
+            <label for="language">Language:</label>
+            <input type="text" id="language" name="language" value="English">
+      
+            <button class="submitButton" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="buttonCr" id="buttonCr">
+        <div class="createButton" id="createButton">
+
+        </div>
+      </section>
+
+      <section class="footer" id="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <h3>BloggingVoyage</h3>
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#first">Home</a></li>
+              <li><a href="#blogCreationButton">Blogs</a></li>
+              <li><a href="./note.html" target="_blank">Take a Note</a></li>
+              <li><a href="https://shivang-portfolio-lovat.vercel.app/">About</a></li>
+              <li><a href="mailto:sharmashivang037@gmail.com">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/shivang-sharma-8b8417336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank" class="social-icon-linkedIN">LinkedIN</a>
+            <a href="https://www.instagram.com/shiivanghere/?igsh=MXV0Nnk1c203cGFpbQ%3D%3D" target="_blank" class="social-icon-instagram">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 BloggingVoyage. All rights reserved.</p>
+        </div>
+      </section>
+    
+      <!-- Glow Effect For Cursor -->
+
+      <section class="glow" id="glow">
+        <div class="gloweffect" id="gloweffect"></div>
+      </section>
+    </main>  
+
+    <!-- Footer Starts Here -->
+
+    
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
